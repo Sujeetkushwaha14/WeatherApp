@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="getfromSessionStorage()">
+    <div class="wrapper">
+        <h1>Weather App</h1>
+            <div class="opt">
+                <div class="tab" data-searchWeather>Search City</div>
+                <div class="tab" data-userWeather>Current Location</div>
+            </div>
+        <div class="container">
+            <!--Grant Location  -->
+            <div class="grant-location sub-container">
+                <img class="image" src="./assets/images.jpeg" alt="location-img" width="80" height="80" loading="lazy" >
+                <p>Grant Location Access</p>
+                <p>Allow Access to get weather Information</p>
+                <button class="btn" data-grantAccess>Grant Access</button>
+            </div>  
+            <!-- Search Bar -->
+            <form onsubmit="subFunc(); return false" class="search-formContainer" data-serachForm>
+                <input type="text" placeholder="Search City weather..." data-searchInput autocomplete="on" name="cityinput">
+                <button class="btn">
+                    <img src="./assets/search-icon.png" loading="lazy" width="20" height="20">
+                </button>
+            </form>
+
+            <!-- Loading screen Container -->
+            <div class="loading-container sub-container">
+                <img src="./assets/loading.jpeg" alt="loading-Image" width="150" height="150">
+                <p>loading</p>
+            </div>
+
+            <!--  Weather Info Container-->
+            <div class="weatherInfo sub-container">
+                <div class="name">
+                    <p data-cityName>india</p>
+                    <img data-countryIcon>
+                </div>
+
+                <!-- Weather Discription   -->
+                <p data-weatherDesc></p>
+
+                <!-- country Icon -->
+                <img data-weatherIcon>
+
+                <!-- temprature -->
+                <p data-temprature></p>
+
+                <!-- cards -parameters  -->
+
+                <div class="parameter-container">
+                    <!-- card 1 -->
+                    <div class="parameter">
+                        <!-- wing image -->
+                        <img src="./assets/windspeed.png" alt="">
+
+                        <!-- wind speed -->
+                        <p>Windspeed</p>
+                        <p data-windspeed></p>
+                    </div>
+
+
+                    <!-- Card 2 -->
+                    <div class="parameter">
+                        <!-- wing image -->
+                        <img src="./assets/humidity.jpeg" alt="">
+
+                        <!-- wind speed -->
+                        <p>Humidity</p>
+                        <p data-humidity></p>
+                    </div>
+
+
+                    <!-- Card 3 -->
+                    <div class="parameter">
+                        <!-- wing image -->
+                        <img src="./assets/cloud.jpeg" alt="">
+
+                        <!-- wind speed -->
+                        <p>Cloud</p>
+                        <p data-cloudiness></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="index.js"></script>
+</body>
+</html>
